@@ -2,7 +2,7 @@ import { getCountries } from "../src/api/index.js";
 import SearchBar from "../src/components/SearchBar.js";
 import CountriesList from "../src/views/CountriesList.js";
 
-class Main {
+class App {
   constructor() {
     this.countriesData = [];
     this.searchBar = new SearchBar();
@@ -26,5 +26,5 @@ class Main {
   }
 }
 
-let app = new Main();
+let app = new App();
 app.run();

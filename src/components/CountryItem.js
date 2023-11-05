@@ -5,12 +5,11 @@ export default class CountryItem {
 
   render() {
     const article = document.createElement("div");
+    article.classList.add("results__wrapper__list__container__item");
     const itemBasic = `
     <span>${this.name.common}</span>
     `;
     article.innerHTML = itemBasic;
     return article;
   }
-
-  toggleItemDetails() {}
 }

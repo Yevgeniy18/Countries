@@ -7,8 +7,7 @@ export default class SearchBar {
     this.search = document.getElementById("search");
   }
 
-  // Function to track the presence of required element on the page
-
+  // Function for tracking  the presence of required element on the page
   waitForElementToExist(selector) {
     return new Promise((resolve) => {
       if (document.querySelector(selector)) {
@@ -24,7 +23,7 @@ export default class SearchBar {
 
       observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
       });
     });
   }

@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300&family=Questrial&family=Roboto&display=swap");
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-body{
-  background-color: #363434;  
+body {
+  background-color: #363434;
+  margin: auto;
+  max-width: 1200px;
 }
