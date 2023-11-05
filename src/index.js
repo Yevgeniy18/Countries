@@ -1,4 +1,3 @@
-import { getCountries } from "../src/api/index.js";
 import SearchBar from "../src/components/SearchBar.js";
 import CountriesList from "../src/views/CountriesList.js";
 
@@ -13,11 +12,6 @@ class App {
   initializeElements() {
     this.searchBar.renderSearchBar();
     this.searchBar.getInputValue();
-  }
-
-  async getInitialData() {
-    let res = await getCountries();
-    this.countriesData = res.countries;
   }
 
   run() {

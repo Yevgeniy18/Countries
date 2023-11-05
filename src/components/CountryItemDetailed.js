@@ -1,6 +1,5 @@
 export default class CountryItemDetailed {
   constructor(item) {
-    this.value = item;
     this.flags = item.flags;
     this.nativeName = Object.values(item.name.nativeName)[0].common;
     this.capital = item.capital[0];
@@ -12,10 +11,8 @@ export default class CountryItemDetailed {
     this.detailsContainer = document.querySelector(
       ".results__wrapper__details",
     );
-  }
 
-  render() {
-    const infoElement = `
+    this.htmlElements = `
     <div class="results__wrapper__details__image"><img src=${
       this.flags.png
     } /></div>
@@ -57,7 +54,15 @@ export default class CountryItemDetailed {
     </div>
     </div>
     `;
-    this.detailsContainer.innerHTML = infoElement;
+  }
+
+  renderDesktop() {
+    this.detailsContainer.innerHTML = this.htmlElements;
     return this.detailsContainer;
+  }
+
+  renderMobile(element) {
+    element.insertAdjacentHTML("beforeend", this.htmlElements);
+    return element;
   }
 }

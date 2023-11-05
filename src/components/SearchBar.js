@@ -41,14 +41,16 @@ export default class SearchBar {
     this.waitForElementToExist("form").then((form) => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        let inputEl = e.currentTarget[0];
 
         const data = new FormData(e.target);
-        const searcheCountry = data.get("query");
+        const searchedCountry = data.get("query");
 
-        if (searcheCountry === "") {
-          console.log("enter");
+        if (searchedCountry === "") {
+          inputEl.setAttribute("error", true);
         } else {
-          let filters = new CountryFilter(searcheCountry);
+          inputEl.removeAttribute("error");
+          let filters = new CountryFilter(searchedCountry);
           filters.filterByName();
         }
       });

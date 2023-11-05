@@ -1,5 +1,6 @@
 export default class CountryItem {
   constructor(item) {
+    this.item = item;
     this.name = item.name;
   }
 
